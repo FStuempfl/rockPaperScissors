@@ -38,9 +38,26 @@ function playRound(playerSelection,computerSelection){
         return "You won!!!"
     }
 }
+function game(i, count){
+    for (var count = 0; count <5; count++){
+        playRound(playerSelection, computerSelection);
+            if (playRound(playerSelection, computerSelection) === "You won!!!"){
+                i++;
+                console.log(i);
+                return
+            }
+            else{
+                console.log("Something went wrong")
+                return
+            }
+        }
+
+}
+let i = 0;
 let playerSelection = prompt().toLowerCase();
 let computerSelection = computerPlay();
 playRound(playerSelection, computerSelection);
 console.log(playRound(playerSelection, computerSelection));
+game(i)
 
 
