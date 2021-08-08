@@ -1,23 +1,27 @@
-function display() {
-    alert("Hello World!")
-}
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-console.log(getRandomInt(3));
 
 function computerPlay(i){
     i = getRandomInt(3);
-    console.log(i);
     if (i === 1){
-        console.log("Scissors")
+        console.log("Scissors");
+        return "Scissors";
     }
     else if (i === 2){
-        console.log("Rock")
+        console.log("Rock");
+        return "Rock";
     }
     else {
-        console.log("Paper")
+        console.log("Paper");
+        return "Paper";
     }
-    console.log(i)
 }
+function playRound(playerSelection,computerSelection){
+    console.log("Hello, welcome to RockPaperScissors please enter your choice");
+    playerSelection
+}
+let playerSelection = prompt();
+let computerSelection = computerPlay();
+
 computerPlay();
