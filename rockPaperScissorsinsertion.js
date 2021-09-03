@@ -17,7 +17,23 @@ function computerPlay(i){
         return "paper";
     }
 }
-function playRound(playerSelection,computerSelection){
+
+   
+function game(i, count){
+    for (var count = 0; count <5; count++){
+        playRound(playerSelection, computerSelection);
+            if (playRound(playerSelection, computerSelection) === "You won!!!"){
+                i++;
+                console.log(count);
+            }
+            else{
+                console.log("not this time")
+                console.log(count)
+            }
+        }
+
+}
+function playRound(){
     //console.log("Hello, welcome to RockPaperScissors please enter your choice");
     playerSelection;
     if (computerSelection === playerSelection){
@@ -34,30 +50,30 @@ function playRound(playerSelection,computerSelection){
     else if(computerSelection === "paper" && playerSelection === "rock"){
         return "You lost, Paper beats Rock"
     }
-    else {
+    else if (computerSelection === "paper" && playerSelection === "scissors"){
         return "You won!!!"
     }
-}
-function game(i, count){
-    for (var count = 0; count <5; count++){
-        playRound(playerSelection, computerSelection);
-            if (playRound(playerSelection, computerSelection) === "You won!!!"){
-                i++;
-                console.log(i);
-                return
-            }
-            else{
-                console.log("Something went wrong")
-                return
-            }
-        }
+    else if (computerSelection === "scissors" && playerSelection === "rock"){
+        return "You won!!!"
+    }
+    else if(computerSelection === "rock" && playerSelection === "paper"){
+        return "You won!!!"
+    }
 
+    else{
+        return "Please restart and enter a valid value"
+    }
 }
+function yourGuess(Guess){
+prompt().toLowerCase()
+}
+
 let i = 0;
-let playerSelection = prompt().toLowerCase();
+let count = 0;
+let playerSelection = yourGuess();
 let computerSelection = computerPlay();
 playRound(playerSelection, computerSelection);
 console.log(playRound(playerSelection, computerSelection));
-game(i)
+game(i);
 
 
